@@ -1,0 +1,68 @@
+<template>
+    <div class="ui centered card">
+        <div class="content">
+            <div class="header">
+                {{ note.title }}
+            </div>
+            <div class="meta italic">
+                {{ note.description }}
+            </div>
+            <div class="extra content">
+                <span class="right floated edit icon" @click="showEdit">
+                    <i class="edit icon"></i>
+                </span>
+                <span class="right floated trash icon" @click="deleteNote()">
+                    <i class="trash icon"></i>
+                </span>
+            </div>
+        </div>
+        <div class="content" v-show="showModelEdit">
+            <div class="ui form">
+                <div class="field">
+                    <label>Title</label>
+                    <input type="text" v-model="thisNote.title">
+                </div>
+                <div class="field">
+                    <label>Description</label>
+                    <input type="text" v-model="thisNote.description">
+                </div>
+                <div class="ui two buttons">
+                    <button class="ui basic button" @click="editNote">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</template>
+<script>
+export default {
+    name: "TextNote",
+    data() {
+        return {
+            showModelEdit: false,
+            thisNote:this.note
+        }
+    },
+    props: ['note'],
+    methods: {
+        deleteNote() {
+            // this.$emit('deleteNote', note);
+            this.$store.dispatch('deleteNote',this.thisNote.id)
+        },
+        editNote() {
+            this.showModelEdit=false;
+            this.$store.dispatch('updateNote',this.thisNote)
+        },
+        showEdit(){
+            this.showModelEdit=true;
+        }
+    }
+}
+</script>
+
+<style scoped>
+.italic {
+    font-style: italic;
+}
+</style>
