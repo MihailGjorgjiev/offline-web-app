@@ -13,6 +13,10 @@ import { mapActions, mapGetters } from 'vuex';
 import HeaderPrompt from './components/HeaderPrompt.vue';
 import CreateNote from './components/CreateNotes'
 import ListNotes from './components/ListNotes.vue';
+// var PouchDB=require('pouchdb');
+
+// var db=new PouchDB('notes');
+
 export default {
   name: 'App',
   components: {
@@ -25,13 +29,12 @@ export default {
       showElement:false 
     }
   },
-  created() {
-    this.$store.dispatch('getNotes')
-  },
+  
 
   methods: {
     ...mapActions['getNotes'],
     CreateNote(note) {
+        // PouchDB.put(note);
       this.notes.push(note);
       console.log('Note has been added.');
     },

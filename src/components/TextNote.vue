@@ -29,9 +29,10 @@
                     <label>Description</label>
                     <input type="text" v-model="thisNote.description">
                 </div>
-                <div class="ui two buttons">
-                    <button class="ui basic button" @click="editNote">Save</button>
-                </div>
+                <button id="update" @click="editNote" class="ui basic button icon">
+                    <i class="check icon"></i>
+                </button>
+                
             </div>
         </div>
     </div>
@@ -47,12 +48,14 @@ export default {
             thisNote:this.note
         }
     },
-    props: ['note'],
+    props: ['note','showElement'],
+    
     methods: {
         deleteNote() {
             this.$store.dispatch('deleteNote',this.thisNote.id)
         },
         editNote() {
+            // this.$emit()
             this.showModelEdit=false;
             this.$store.dispatch('updateNote',this.thisNote)
         },
@@ -63,8 +66,11 @@ export default {
 }
 </script>
 
-<style scoped>
+<style >
 .italic {
     font-style: italic;
+}
+#update{
+   z-index: 1;
 }
 </style>

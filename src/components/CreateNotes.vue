@@ -19,7 +19,7 @@
                 </div>
             </div>
         </div>
-        <button id="check" @click="sendDataModel()" class="ui basic button icon">
+        <button id="check" @click="sendDataModel" class="ui basic button icon">
             <i class="check icon"></i>
         </button>
         <button id="cancel" @click="closeModel" class="ui basic button icon" v-show="showElement">
