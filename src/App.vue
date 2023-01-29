@@ -86,6 +86,7 @@ body{
 }
 #cancel{
   left:3rem;
+  right:unset;
   background-color: #C7386F !important;
 }
 #check{
