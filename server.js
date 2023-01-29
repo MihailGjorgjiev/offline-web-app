@@ -14,7 +14,7 @@ app.use((req, res, next) => {
   res.setHeader('Pragma', 'no-cache');
   res.setHeader('Expires', '0');
  
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080') //REPLACE LOCALHOST WITH NETLIFY URL
+  res.setHeader('Access-Control-Allow-Origin', 'https://offline-note-app.netlify.app') //REPLACE LOCALHOST WITH NETLIFY URL
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS')
   res.setHeader('Access-Control-Allow-Headers', 'content-type, authorization, x-requested-with')
   next();
