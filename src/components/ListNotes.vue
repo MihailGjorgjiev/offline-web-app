@@ -8,7 +8,7 @@
 <script>
 import { mapGetters } from 'vuex';
 import TextNote from './TextNote.vue';
-// import store from '@/store';
+
 export default {
     name: "ListNotes",
     props: ['showElement'],
@@ -32,7 +32,6 @@ export default {
             }
         },
         closeModel(){
-            console.log(1);
             this.$emit('closeModel')
         }
     }

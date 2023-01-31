@@ -52,10 +52,9 @@ export default {
     
     methods: {
         deleteNote() {
-            this.$store.dispatch('deleteNote',this.thisNote.id)
+            this.$store.dispatch('deleteNote',this.thisNote._id)
         },
         editNote() {
-            // this.$emit()
             this.showModelEdit=false;
             this.$store.dispatch('updateNote',this.thisNote)
         },

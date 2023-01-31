@@ -48,6 +48,7 @@ export default {
                 const description = this.descriptionText;
                 const date=this.currentTime;
                 const newNote = { title: title, description: description,timeCreated:date };
+                
                 store.dispatch('addNote', newNote);
             }
             
