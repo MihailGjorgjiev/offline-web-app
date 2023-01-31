@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "add-cors-to-couchdb": "0.0.6",
     "axios": "^1.2.6",
     "base-64": "^1.0.0",
     "core-js": "^3.8.3",
