@@ -5,7 +5,8 @@ const base64 = require('base-64');
 const PouchDB = require('pouchdb');
 const pouchDB = PouchDB.default.defaults();
 const db = new pouchDB('notepad');
-const couchdb=new pouchDB("http://localhost:5984/notepad");
+const couchdb=new pouchDB("http://localhost:5984/notepad", {skip_setup: true});
+
 db.sync(couchdb,{
   live: true,   // do a live, ongoing sync
   retry: true   // retry if the conection is lost

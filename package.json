@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve  && add-cors-to-couchdb http://localhost:5984 -u GJMihail -p GJMihail",
-    "build": "vue-cli-service build && add-cors-to-couchdb http://localhost:5984 -u GJMihail -p GJMihail",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
