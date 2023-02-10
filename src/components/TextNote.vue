@@ -52,11 +52,11 @@ export default {
     
     methods: {
         deleteNote() {
-            this.$store.dispatch('deleteNote',this.thisNote._id)
+            this.$store.dispatch('deleteNote',this.note._id);
         },
         editNote() {
             this.showModelEdit=false;
-            this.$store.dispatch('updateNote',this.thisNote)
+            this.$store.dispatch('updateNote',this.note)
         },
         showEdit(){
             this.showModelEdit=true;

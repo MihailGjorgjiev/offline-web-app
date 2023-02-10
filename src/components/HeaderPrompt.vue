@@ -1,6 +1,6 @@
 <template>
         <div  class="pwa-prompt">
-            <h2>Offline First Notepad App</h2>
+            <h2>Offline First Notes App</h2>
         </div>
 </template>
 

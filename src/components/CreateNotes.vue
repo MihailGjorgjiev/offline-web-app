@@ -14,7 +14,7 @@
                     </div>
                     <div class="field">
                         <label>Time Created</label>
-                        <input type="text"  :value="currentTime" disabled>
+                        <input type="text"  :value="currentTime()" disabled>
                     </div>
                 </div>
             </div>
@@ -46,17 +46,18 @@ export default {
             if (this.titleText.length > 0 && this.descriptionText.length > 0) {
                 const title = this.titleText;
                 const description = this.descriptionText;
-                const date=this.currentTime;
+                const date=this.currentTime();
                 const newNote = { title: title, description: description,timeCreated:date };
                 
                 store.dispatch('addNote', newNote);
             }
-            
+            // console.log(this.currentTime());
             this.closeModel();
 
         },
         showModel(){
-            this.$emit('showModel')
+            
+            this.$emit('showModel');
         },
         closeModel() {
             this.titleText = "";
@@ -66,15 +67,16 @@ export default {
         CreateNote(note) {
             this.notes.push(note);
             console.log('Note has been added.');
-        }
-    },
-    computed:{
+        },
         currentTime(){
             let datetime=new Date().toString().substring(4,24);
             let time=datetime.substring(12,20);
             let date=datetime.substring(0,11);
             return date+" "+time;
         }
+    },
+    computed:{
+
     }
 }
 </script>   
