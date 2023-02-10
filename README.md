@@ -1,4 +1,6 @@
-# offline-notes-app
+# Offline Web Application
+Contributors:
+- Mihail Gjorgjiev 206009
 
 ## Project setup
 ```
